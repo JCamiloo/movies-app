@@ -7,7 +7,6 @@ const URL = environment.imgPath;
   name: 'imagen'
 })
 export class ImagenPipe implements PipeTransform {
-
   transform(img: string, size: string = 'w500'): string {
     if(!img){
       return './assets/no-image-banner.jpg';
@@ -15,5 +14,4 @@ export class ImagenPipe implements PipeTransform {
     const imgURL = `${URL}/${size}${img}`
     return imgURL;  
   }
-
 }
