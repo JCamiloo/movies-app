@@ -8,6 +8,9 @@ import { SlideshowParesComponent } from './slideshow-pares/slideshow-pares.compo
 import { DetalleComponent } from './detalle/detalle.component';
 
 @NgModule({
+  entryComponents: [
+    DetalleComponent
+  ],
   declarations: [
     SlideshowBackdropComponent,
     SlideshowPosterComponent,
