@@ -1,3 +1,4 @@
+import { PeliculaDetalle } from './../../app.interfaces';
 import { Component, OnInit, Input } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -9,11 +10,12 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class DetalleComponent implements OnInit {
 
   @Input() id;
+  pelicula: PeliculaDetalle = {};
 
   constructor(private movie:MoviesService) { }
 
   ngOnInit() {
-    this.movie.getPeliculaDetalle(this.id).subscribe(resp => console.log(resp));
+    this.movie.getPeliculaDetalle(this.id).subscribe(resp => this.pelicula = resp);
     this.movie.getActoresPelicula(this.id).subscribe(resp => console.log(resp));
   }
 
