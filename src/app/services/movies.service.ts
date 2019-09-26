@@ -56,6 +56,7 @@ export class MoviesService {
     return new Promise(resolve => {
       this.ejecutarQuery(`/genre/movie/list?a=1`).subscribe(resp => {
         this.generos = resp['genres'];
+        resolve(this.generos);
       });
     });
   }
